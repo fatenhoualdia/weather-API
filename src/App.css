@@ -1,0 +1,228 @@
+@import url(https://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+ @import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css);
+ @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+ h2 {
+	 text-align: center;
+	 color: #fff;
+	 font-weight: normal;
+}
+ .weather {
+	 width: 80%;
+	 margin: 10px auto;
+	 box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+ .weather__hero {
+	 width: 100%;
+	 min-height: 150px;
+	 position: relative;
+}
+ .weather__hero__image {
+	 overflow: hidden;
+	 background-image: url(https://images.unsplash.com/photo-1583826825313-5a5bc9d7733b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80);
+	 background-size: cover;
+	 background-position: center;
+	 background-repeat: no-repeat;
+	 min-height: 200px;
+	 background-color: #01a7a6;
+}
+ .weather__hero__image img {
+	 max-width: 100%;
+}
+ .weather__hero__image:after, .weather__hero__image:before {
+	 content: '';
+	 position: absolute;
+	 top: 0;
+	 bottom: 0;
+	 width: 100%;
+	 z-index: 0;
+}
+ .weather__hero__image:after {
+	 background-image: linear-gradient(to left, transparent 65%, rgba(139, 195, 74, 0.37) 80%);
+}
+ .weather__hero__image:before {
+	 background-image: linear-gradient(to right, transparent 65%, rgba(233, 30, 99, 0.38) 80%);
+}
+ .weather__hero__place {
+	 position: absolute;
+	 top: 10%;
+	 left: 0;
+	 color: #fff;
+	 z-index: 1;
+}
+ .weather__hero__place span {
+	 font-size: 11px;
+	 background-color: rgba(0, 0, 0, .5);
+	 padding: 5px 20px 5px 25px;
+	 border-radius: 0 50px 50px 0;
+	 margin-bottom: 10px;
+	 color: #fff;
+	 display: flex;
+	 align-items: center;
+	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+ .weather__hero__place span i {
+	 margin-left: 5px;
+	 font-size: 22px;
+}
+ .weather__hero__info {
+	 position: absolute;
+	 bottom: 10%;
+	 z-index: 1;
+}
+ .weather__hero__info span {
+	 font-size: 11px;
+	 background-color: rgba(0, 0, 0, .5);
+	 padding: 3px 20px;
+	 border-radius: 80px 0 0 80px;
+	 color: #fff;
+	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+ .weather__hero__info i {
+	 margin-left: 10px;
+	 font-size: 10px;
+}
+ .weather__stats {
+	 background-color: #01a7a6;
+	 min-height: 80px;
+	 padding: 5px 0;
+	 display: flex;
+	 justify-content: space-between;
+	 align-items: center;
+	 flex-direction: row-reverse;
+	 text-align: center;
+	 color: #fff;
+}
+ .weather__stats__today {
+	 flex: 1;
+	 height: 100%;
+	 display: flex;
+	 justify-content: space-around;
+	 align-items: center;
+	 flex-direction: row;
+	 height: 100%;
+	 border-right: 1px solid rgba(0, 40, 40, .1);
+	 min-width: 200px;
+}
+ .weather__stats__today i {
+	 font-size: 48px;
+}
+ .weather__stats__today__degree {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 flex-direction: column;
+	 height: 100%;
+}
+ .weather__stats__today__degree .degree {
+	 font-size: 35px;
+	 font-weight: normal;
+}
+ .weather__stats__today__degree .badge {
+	 font-size: 11px;
+	 background-color: rgba(0, 0, 0, .2);
+	 padding: 5px 20px;
+	 border-radius: 5px;
+	 color: #fff;
+}
+ .weather__stats__otherdays {
+	 flex: 3;
+	 display: inline-flex;
+	 justify-content: space-between;
+	 align-items: center;
+	 height: 100%;
+	 padding-right: 10px;
+	 padding-left: 10px;
+}
+ .weather__stats__otherdays > div {
+	 flex: 1;
+	 height: 100%;
+	 display: flex;
+	 justify-content: space-between;
+	 align-items: center;
+	 flex-direction: column;
+	 padding: 10px;
+	 border-radius: 5px;
+	 transition: 0.2s ease-in-out;
+}
+ .weather__stats__otherdays > div .badge {
+	 font-size: 10px;
+	 background-color: rgba(0, 0, 0, .2);
+	 padding: 5px 20px;
+	 border-radius: 5px;
+	 margin-bottom: 10px;
+	 color: #d9d9d9;
+}
+ .weather__stats__otherdays > div .icon {
+	 margin-bottom: 10px;
+}
+ .weather__stats__otherdays > div .icon i {
+	 font-size: 28px;
+}
+ .weather__stats__otherdays > div .degree {
+	 font-size: 18px;
+}
+ .weather__stats__otherdays > div:hover {
+	 background-color: #eecb65;
+	 cursor: help;
+}
+ .weather__stats__otherdays > div:hover .badge {
+	 color: #fff;
+}
+ .weather--small {
+	 max-width: 350px;
+	 position: relative;
+}
+ .weather--small .weather__hero {
+	 height: 300px;
+}
+ .weather--small .weather__hero__image {
+	 height: 100%;
+	 transition: 0.8s ease-in-out;
+}
+ .weather--small .weather__stats {
+	 display: flex;
+	 flex-direction: column;
+	 background-color: #e91e63;
+	 background: linear-gradient(to bottom, #141e30, #243b55);
+}
+ .weather--small .weather__stats__today {
+	 border-right: none;
+	 margin-bottom: 20px;
+}
+ .weather--small .weather__stats__otherdays {
+	 width: 100%;
+	 flex-direction: column;
+}
+ .weather--small .weather__stats__otherdays > div {
+	 flex-direction: row;
+	 border-radius: 0;
+	 max-width: 250px;
+	 width: 100%;
+	 padding: 0px;
+	 margin: 0px auto 5px;
+	 background-color: rgba(0, 0, 0, .1);
+}
+ .weather--small .weather__stats__otherdays > div > * {
+	 margin-bottom: 0;
+	 display: flex;
+	 align-items: center;
+	 padding: 10px;
+	 margin: 0 5px;
+}
+ .weather--small .weather__stats__otherdays > div .icon {
+	 order: 2;
+}
+ .weather--small .weather__stats__otherdays > div .badge {
+	 min-width: 80px;
+	 justify-content: center;
+}
+ .weather--small .weather__stats__otherdays > div:hover {
+	 background-color: rgba(0, 0, 0, .2);
+}
+
+.vl {
+	border-left: 2px solid rgb(61, 61, 61);
+	height: 120px;
+  }
+ 
